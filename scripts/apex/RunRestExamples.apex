@@ -15,4 +15,7 @@ RestCallout.postObject();
 //5. POST Airline
 RestCallout.postAirlines();
 
+//6. DELETE Employee
+RestCallout.deleteEmployee('1');
+
 

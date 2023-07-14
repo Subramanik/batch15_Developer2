@@ -2,16 +2,16 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-13-2023
+ * @last modified on  : 07-14-2023
  * @last modified by  : Subramani Kumarasamy
 **/
 public class ObjectRequest{
-	public String name;	//Apple MacBook Pro 16
-	public DataDetail data;
+	public String name {get;set;}	//Apple MacBook Pro 16
+	public DataDetail data  {get;set;}
 	public class DataDetail {
-		public Integer year;	//2019
-		public Double price;	//1849.99
-		public String CPU_model;	//Intel Core i9
-		public String Hard_disk_size;	//1 TB
+		public Integer year  {get;set;}	//2019
+		public Double price  {get;set;}	//1849.99
+		public String CPU_model  {get;set;}	//Intel Core i9
+		public String Hard_disk_size  {get;set;}	//1 TB
 	}
 }

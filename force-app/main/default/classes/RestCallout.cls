@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-13-2023
+ * @last modified on  : 07-14-2023
  * @last modified by  : Subramani Kumarasamy
 **/
 public class RestCallout {
@@ -200,7 +200,8 @@ public class RestCallout {
 
     //Endpoint: https://api.instantwebtools.net/v1/airlines
     //Method: POST
-    public static void postAirlines(){
+    @future(callout= true)
+    public static void postAirlines(Id airlineId){
         // / Steps to make a REST Outbound Callout
         //1. Prepare the HTTPRequest
         HttpRequest request = new HttpRequest();
@@ -213,7 +214,7 @@ public class RestCallout {
         request.setHeader('Content-Type', 'application/json');
             //1.c.b Set Authorization
         // 1.d.a Prepare the JSON Body
-        Airline__c airline = [SELECT Name, Name__c, country__c, Head_Quarters__c, website__c, Logo_URL__c, Established__c, Slogan__c FROM Airline__c WHERE Id!= NULL AND Callout_Status__c ='Callout Send' LIMIT 1];
+        Airline__c airline = [SELECT Name, Name__c, country__c, Head_Quarters__c, website__c, Logo_URL__c, Established__c, Slogan__c FROM Airline__c WHERE ID=: airlineId];
 
         AirlinesWrapper wrapper = new AirlinesWrapper();
         wrapper.id= Integer.valueOf(airline.Name);
@@ -235,10 +236,49 @@ public class RestCallout {
         //4. Process the HTTPResponse
         if(response.getStatusCode()== 200){
             System.debug('Response Body '+ response.getBody());
+            airline.Callout_Status__c = 'Callout Pass';
+        }else{
+            System.debug('Response Body '+ response.getBody());
+            airline.Callout_Status__c = 'Callout Failed';
         }
+        update airline;
 
         //Home Work 2:
         // If it is successful, update the callout status as 'Callout Pass'
         // If it is not successful, update the callout status as 'Callout Fail'
+
+        // Call Airline API whenever a record is created in the Airline object in salesforce and update the callout status based on the response from the API.
+
+        // 1. Create a new airline record in salesforce - User Inerface
+        // 2. Trigger - after insert (salesforceID)
+        // 3. Using @future method call the airline API
+        // 4. Call @future method from trigger.
+    }
+
+    // Endpoint: https://api.onlinewebtutorblog.com/employees/1
+    // Method: DELETE
+    public static void deleteEmployee(String employeeId){
+        // Steps to make a REST Outbound Callout.
+        //1. Prepare the HTTPRequest
+        HttpRequest request = new HttpRequest();
+        //1.a. Set Endpoint
+        request.setEndpoint('callout:Employee/'+employeeId);
+        //1.b. Set Method
+        request.setMethod('DELETE');
+        //1.c Set Header
+            //1.c.a Set Content-Type
+            //1.c.b Set Authorization
+        //1.d Set Body - POST, PUT
+        //2. Prepare the Internet Http
+        Http http = new Http();
+        //3. Send the HTTPRequest over the internet and get the response
+        HttpResponse response = http.send(request);
+        //4. Process the HTTPResponse
+        if(response.getStatusCode()== 200){
+            System.debug('Response Body '+ response.getBody());
+            String jsonBody = response.getBody();
+            EmployeeResponse emp = (EmployeeResponse)JSON.deserialize(jsonBody, EmployeeResponse.class);
+            System.debug('Employee Response msg '+ emp.msg);
+        }
     }
 }
