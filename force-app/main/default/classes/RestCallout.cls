@@ -2,9 +2,22 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-14-2023
+ * @last modified on  : 07-18-2023
  * @last modified by  : Subramani Kumarasamy
 **/
+/**
+* Steps to make a REST Outbound Callout.
+    1. Prepare the HTTPRequest
+    2. Set Endpoint/ Named Credentials
+    3. Set Method
+    4. Set Header
+        4.a. Set Content-Type - Only for POST, PUT, PATCH
+        4.B. Set Authorization - Only when you don't use Named Credentials
+    5. Set Body - Only for POST, PUT, PATCH
+    6. Prepare the Internet Http
+    7. Send the HTTPRequest over the internet and get the response
+    8. Process the HTTPResponse
+ **/
 public class RestCallout {
 
     //Endpoint: https://th-apex-http-callout.herokuapp.com/animals
