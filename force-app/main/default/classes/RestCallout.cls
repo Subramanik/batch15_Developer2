@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-18-2023
+ * @last modified on  : 07-20-2023
  * @last modified by  : Subramani Kumarasamy
 **/
 /**
@@ -166,7 +166,7 @@ public class RestCallout {
 
     //Endpoint: https://api.restful-api.dev/objects
     //Method: POST
-    public static void postObject(){
+    public static HttpResponse postObject(){
         // / Steps to make a REST Outbound Callout
         //1. Prepare the HTTPRequest
         HttpRequest request = new HttpRequest();
@@ -206,6 +206,7 @@ public class RestCallout {
         if(response.getStatusCode()== 200){
             System.debug('Response Body '+ response.getBody());
         }
+        return response;
         // HomeWork:
         //1. Deserialize the response body
         //2. Print/Debug it each data in the reponse.
