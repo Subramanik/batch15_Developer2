@@ -40,10 +40,13 @@
 **/
 
 
-String URI =  'https://batch-13-dev-ed.develop.my.salesforce.com/services/apexrest/Oppty/0067R00001y07cYQAQ';
-System.debug('Index: '+URI.lastIndexOf('/'));
-Integer startIndexOfId = URI.lastIndexOf('/')+1;
-System.debug('startIndexOfId: '+startIndexOfId);
+// How to write test class for REST Web Service:
 
-//Id opptyId = URI.substring(2);
-System.debug('opptyId: '+URI.substring(2));
+/**
+  Steps to write test class for REST Web services:
+      1. Prepare the RestRequest - URI, Method, Body
+      2. Assign the resuest to RestContext.request
+      OR Create the create the required data (Only for paramterised methods)
+      3. Call the Method
+      4. Verify the result
+**/
