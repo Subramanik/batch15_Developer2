@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-20-2023
+ * @last modified on  : 07-25-2023
  * @last modified by  : Subramani Kumarasamy
 **/
 /**
@@ -294,5 +294,22 @@ public class RestCallout {
             EmployeeResponse emp = (EmployeeResponse)JSON.deserialize(jsonBody, EmployeeResponse.class);
             System.debug('Employee Response msg '+ emp.msg);
         }
+    }
+
+    public static void getOpptyFromTargetSFOrg(Id sourceOrgOpptyId){
+        //Prepare the HTTPRequest
+        HttpRequest request = new HttpRequest();
+
+        // Set EndPoint
+        request.setEndpoint('callout:Salesforce_Integration/services/apexrest/Oppty/'+sourceOrgOpptyId);
+        //Set Method
+        request.setMethod('GET');
+        //Prepare the Internet Http
+        Http http = new Http();
+        //Send the HTTPRequest over the internet and get the response
+        HttpResponse response = http.send(request);
+        //Process the HTTPResponse
+        System.debug('Response Body '+ response.getBody());
+
     }
 }

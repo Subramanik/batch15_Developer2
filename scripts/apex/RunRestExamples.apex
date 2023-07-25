@@ -18,4 +18,7 @@ RestCallout.postAirlines();
 //6. DELETE Employee
 RestCallout.deleteEmployee('1');
 
+//7. Get Opportunity Info from Target Org
+RestCallout.getOpptyFromTargetSFOrg('0067R00001ygdxjQAA');
+
 

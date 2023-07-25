@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Subramani Kumarasamy
  * @group             : 
- * @last modified on  : 07-24-2023
+ * @last modified on  : 07-25-2023
  * @last modified by  : Subramani Kumarasamy
 **/
 
@@ -36,27 +36,33 @@ global class CreateAccConWebService {
         //Convert the blob into String
         String reqBody = blobBody.toString();
         //Use JSON class and wrapper class to deserialize
-        RequestWrapper requestData = (RequestWrapper)JSON.deserialize(reqBody, RequestWrapper.Class);
-
-        //Process the request
-        // Insert Account
-        Account acc = new Account();
-        acc.Name = requestData.accountData.name;
-        acc.Phone = requestData.accountData.phone;
-        insert acc;
-
-        //Create Contact
-        Contact con = new Contact();
-        con.FirstName = requestData.contactData.firstName;
-        con.LastName = requestData.contactData.lastName;
-        con.Email = requestData.contactData.email;
-        con.AccountId= acc.Id;
-        insert con;
-
-        //Send the repsonse
         ResponseWrapper response = new ResponseWrapper();
-        response.success= true;
-        response.message = 'Record Created successfully!';
+
+        try{
+            RequestWrapper requestData = (RequestWrapper)JSON.deserialize(reqBody, RequestWrapper.Class);
+            
+            //Process the request
+            // Insert Account
+            Account acc = new Account();
+            acc.Name = requestData.accountData.name;
+            acc.Phone = requestData.accountData.phone;
+            insert acc;
+
+            //Create Contact
+            Contact con = new Contact();
+            con.FirstName = requestData.contactData.firstName;
+            con.LastName = requestData.contactData.lastName;
+            con.Email = requestData.contactData.email;
+            con.AccountId= acc.Id;
+            insert con;
+            //Send the repsonse
+            response.success= true;
+            response.message = 'Record Created successfully!';
+        }catch (Exception ex){
+            response.success= False;
+            response.message = 'There is an Error : '+ex.getMessage();
+        }
+        
 
         return response;
     }
