@@ -50,3 +50,21 @@
       3. Call the Method
       4. Verify the result
 **/
+
+for(ObjectApi variable: listname){
+
+}
+for(Account acc: accList){
+   
+}
+
+for:each= listname/acclist
+for:item= variable/acc
+
+//Syntax
+<template iterator:it={contacts}>
+<li key={it.value.Id}>
+
+// iterator is the syntax
+// it is the variable - acc in the apex for loop.
+// {contacts} - it is the array from JS

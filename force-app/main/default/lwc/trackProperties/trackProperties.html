@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 07-28-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Track Properties">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" label="Where do you live ?"
+            value={location.city}
+            onchange={changeHandler}>
+            </lightning-input>
+        </div>
+
+        <div class="slds-var-m-around_medium">
+            I live in {location.city}, {location.country}
+        </div>
+    </lightning-card>
+</template>

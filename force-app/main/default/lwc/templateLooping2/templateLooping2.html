@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 07-31-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Looping - Iterator">
+        <div class="slds-var-m-around_medium">
+            <template iterator:product={products}>
+                <div key={product.value.Id}>
+                    <template lwc:if={product.first}>
+                        <strong>First Element: </strong> <br/>
+                        {product.value.Name} <br/>
+                        {product.value.Price} <br/>
+                    </template>
+                    <template lwc:if={product.last}>
+                        <strong>Last Element: </strong> <br/>
+                        {product.value.Name} <br/>
+                        {product.value.Price}
+                    </template>
+                    <template lwc:else>
+                        <strong>Remaining Elements: </strong> <br/>
+                        {product.value.Name} <br/>
+                        {product.value.Price} <br/>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

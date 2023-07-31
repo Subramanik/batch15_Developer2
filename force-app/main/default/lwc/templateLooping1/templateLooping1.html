@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 07-31-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Looping - for:each">
+        <div class="slds-var-m-around_medium">
+            <template for:each={favouriteFoods} for:item="food" for:index="index">
+                <div key={food}>
+                    {index} - {food}
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>
