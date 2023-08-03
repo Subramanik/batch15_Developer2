@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-03-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="LDS - Airline View Form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-view-form
+                object-api-name={objectApiName}
+                record-id={recordId}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name={fields.airIdField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.nameField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.countryField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.estField}> </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name={fields.headQuaField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.sloganField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.urlField}> </lightning-output-field>
+                        <lightning-output-field field-name={fields.logoField}> </lightning-output-field>
+                    </div>
+                </div>
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>

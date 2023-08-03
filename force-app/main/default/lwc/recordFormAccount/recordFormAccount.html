@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-01-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="LDS Record Form - Account" icon-name="standard:account_info">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form
+                    object-api-name={objectApiName}
+                    record-id={recordId}
+                    fields={fields}
+                    columns="2"
+                    mode="view"
+                    onsuccess={successHandler}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>

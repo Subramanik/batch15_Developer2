@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-03-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="LDS - Account Edit Form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsuccess={successHandler}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={fields.nameField}> </lightning-input-field>
+                        <lightning-input-field field-name={fields.typeField}> </lightning-input-field>
+                        <lightning-input-field field-name={fields.industryField}> </lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={fields.revenueField}> </lightning-input-field>
+                        <lightning-input-field field-name={fields.accNumField}> </lightning-input-field>
+                        <lightning-input-field field-name={fields.phoneField}> </lightning-input-field>
+                    </div>
+                </div>
+                <div class="slds-var-m-top_medium slds-align_absolute-center">
+                    <lightning-button variant="neutral" type="reset" label="Cancel" class="slds-var-m-right_small"></lightning-button>
+                    <lightning-button variant="brand" type="submit" label="Save"></lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template> 

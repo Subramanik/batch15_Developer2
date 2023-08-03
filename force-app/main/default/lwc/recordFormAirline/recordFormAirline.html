@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-01-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="LDS - Record Form Airline" icon-name="custom:custom20">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form
+                    object-api-name={objectApiName}
+                    record-id={recordId}
+                    fields={fields}
+                    columns="2"
+                    mode="view"
+                    onsuccess={successHandler}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
+
+<!--
+    Home Work:
+    1. Write a validation rule on the Airline object and if the established year is in future, throw an error. Update the established year on your LDS Component, and display the error message on the UI.
+    2. Create a new LWC that fetches Contact information using record-form and display it on the UI. It should be read-only.
+-->
