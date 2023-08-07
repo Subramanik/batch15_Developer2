@@ -20,6 +20,9 @@ export default class GetObjectInfoAirline extends LightningElement {
 
             // Retrived International Record Type Id
             const rtInfos= data.recordTypeInfos;
+            console.log(rtInfos);
+            console.log('Object.keys(rtInfos): '+Object.keys(rtInfos));
+            console.log('rtInfos[0122t0000008nYqAAI].name : '+rtInfos['0122t0000008nYqAAI'].name);
             this.masterRTIdOneLine = Object.keys(rtInfos).find(item => rtInfos[item].name === 'International');
         }
         if(error){

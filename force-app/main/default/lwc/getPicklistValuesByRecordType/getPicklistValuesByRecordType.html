@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-07-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Wire Adapter - getPicklistValuesByRecordType" icon-name="utility:einstein">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                name="industry"
+                label="Account Industry: "
+                value={industryValue}
+                options={industryPicklistValues}
+                onchange={handleChange}>
+            </lightning-combobox>
+            <lightning-combobox
+                name="type"
+                label="Account Type: "
+                value={typeValue}
+                options={typePicklistValues}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <p>Selected Industry is: {industryValue}</p>
+            <p>Selected Type is: {typeValue}</p>
+        </div>
+    </lightning-card>
+</template>

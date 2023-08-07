@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-07-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="Wire Adapter - getPicklistValues" icon-name="standard:picklist_choice">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Account Industry: "
+                value={industryValue}
+                options={industryPicklistValues}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-around_medium slds-text-color_success">
+            <p>Selected value is: {industryValue}</p>
+        </div>
+    </lightning-card>
+</template>
