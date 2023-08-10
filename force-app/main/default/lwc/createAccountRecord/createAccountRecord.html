@@ -2,39 +2,45 @@
   @description       : 
   @author            : Subramani Kumarasamy
   @group             : 
-  @last modified on  : 08-08-2023
+  @last modified on  : 08-10-2023
   @last modified by  : Subramani Kumarasamy
 -->
 <template>
     <!--Use Case: Create a custom LWC Page With Account fields and create the Account record upon user clicking on save button-->
     <lightning-card title="Wire Adapter - Create Record Account" icon-name="standard:account">
         <div class="slds-var-m-around_medium">
-            <!--Account Name-->
-            <lightning-input
-                type="text" 
-                label="Enter the Account Name"
-                onchange={handleChange}>
-            </lightning-input>
-            <!--Account Industry-->
-            <lightning-combobox
-                name="progress"
-                label="Select the Industry"
-                value={value}
-                options={industryPicklistValues}
-                onchange={handleChange}>
-            </lightning-combobox>
-            <!--Account Website-->
-            <lightning-input 
-                type="url" 
-                label="Website URL"
-                onchange={handleChange}>
-            </lightning-input>
-            <!--Account Revenue-->
-            <lightning-input 
-                type="number" 
-                label="Enter the Revenue"
-                onchange={handleChange}>
-            </lightning-input>
+            <form class="accountForm" lwc:ref="accForm">
+                <!--Account Name-->
+                <lightning-input
+                    type="text" 
+                    label="Enter the Account Name"
+                    name="Name"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Account Industry-->
+                <lightning-combobox
+                    name="Industry"
+                    label="Select the Industry"
+                    value={value}
+                    options={industryPicklistValues}
+                    onchange={handleChange}
+                    lwc:ref="combobox">
+                </lightning-combobox>
+                <!--Account Website-->
+                <lightning-input 
+                    type="url" 
+                    name="Website"
+                    label="Website URL"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Account Revenue-->
+                <lightning-input 
+                    type="number" 
+                    name="AnnualRevenue"
+                    label="Enter the Revenue"
+                    onchange={handleChange}>
+                </lightning-input>
+            </form>
         </div>
         <div class="slds-var-m-around_medium slds-align_absolute-center">
              <!--Cancel Button-->

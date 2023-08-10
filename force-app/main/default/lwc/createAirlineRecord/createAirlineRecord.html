@@ -1,0 +1,96 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-10-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Create a custom LWC Page With Account fields and create the Account record upon user clicking on save button-->
+    <lightning-card title="Wire Adapter - Create Record Airline" icon-name="custom:custom20">
+        <div class="slds-var-m-around_medium">
+            <form class="airlineForm" lwc:ref="airForm">
+                <!--Airline ID-->
+                <lightning-input
+                    type="text" 
+                    label="Enter the Airline ID"
+                    name="Name"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Callout Status-->
+                <lightning-combobox
+                    name="Callout_Status__c"
+                    label="Select the Callout Status"
+                    value={value}
+                    options={calloutStatusValues}
+                    onchange={handleChange}
+                    lwc:ref="combobox">
+                </lightning-combobox>
+                <!--Airline Name-->
+                <lightning-input 
+                    type="text" 
+                    name="Name__c"
+                    label="Enter Airline Name"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Country-->
+                <lightning-input 
+                    type="text" 
+                    name="Country__c"
+                    label="Enter the Country"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Established-->
+                <lightning-input 
+                    type="text" 
+                    name="Established__c"
+                    label="Enter the Established Year"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Country-->
+                <lightning-input 
+                    type="text" 
+                    name="Head_Quarters__c"
+                    label="Enter the HeadQuarters"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline LOGO Url-->
+                <lightning-input 
+                    type="url" 
+                    name="Logo_URL__c"
+                    label="Enter the Logo URL"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Country-->
+                <lightning-input 
+                    type="text" 
+                    name="Slogan__c"
+                    label="Enter the Slogan"
+                    onchange={handleChange}>
+                </lightning-input>
+                <!--Airline Website-->
+                <lightning-input 
+                    type="url" 
+                    name="Website__c"
+                    label="Enter the Airline Website"
+                    onchange={handleChange}>
+                </lightning-input>
+            </form>
+        </div>
+        <div class="slds-var-m-around_medium slds-align_absolute-center">
+             <!--Cancel Button-->
+             <lightning-button 
+             label="Cancel"
+             onclick={handleCancel} 
+             class="slds-var-m-left_x-small">
+         </lightning-button>
+         <!--Save Button-->
+         <lightning-button
+             variant="brand" 
+             label="Save" 
+             onclick={handleSave} 
+             class="slds-var-m-left_x-small">
+         </lightning-button>
+        </div>
+    </lightning-card>
+</template>

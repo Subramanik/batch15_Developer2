@@ -1,46 +1,43 @@
 import { LightningElement, wire } from 'lwc';
 import { getObjectInfo, getPicklistValues } from "lightning/uiObjectInfoApi";
-import ACCOUNT_OBJECT from "@salesforce/schema/Account";
-import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
+import AIRLINE_OBJECT from "@salesforce/schema/Airline__c";
+import CALLOUT_STATUS_FIELD from '@salesforce/schema/Airline__c.Callout_Status__c';
 import { createRecord } from 'lightning/uiRecordApi';
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-export default class CreateAccountRecord extends LightningElement {
+export default class CreateAirlineRecord extends LightningElement {
+    calloutStatusValues =[];
+    airlineInputData ={};
 
-    industryPicklistValues =[];
-    accInputData ={};
+    @wire(getObjectInfo, { objectApiName: AIRLINE_OBJECT })
+    airlineInfo;
 
-    @wire(getObjectInfo, { objectApiName: ACCOUNT_OBJECT })
-    accountInfo;
-
-    @wire(getPicklistValues, { recordTypeId: '$accountInfo.data.defaultRecordTypeId', fieldApiName: INDUSTRY_FIELD })
+    @wire(getPicklistValues, { recordTypeId: '$airlineInfo.data.defaultRecordTypeId', fieldApiName: CALLOUT_STATUS_FIELD })
     insdustryPicklistHandler({data,error}){
         if(data){
-            console.log('Create Account Record');
             console.log(data);
-            this.industryPicklistValues = data.values;
+            this.calloutStatusValues = data.values;
         }
     }
 
     handleChange(event){
         const value = event.target.value;
         const name = event.target.name;
-        this.accInputData[name] = value;
-        console.log(JSON.stringify(this.accInputData));
-
+        this.airlineInputData[name] = value;
+        console.log(JSON.stringify(this.airlineInputData));
     }
 
     handleSave(){
         //prepare the parameter for createRecord method.
         const recordInput = {
-            apiName : ACCOUNT_OBJECT.objectApiName,
-            fields: this.accInputData
+            apiName : AIRLINE_OBJECT.objectApiName,
+            fields: this.airlineInputData
         };
 
         createRecord(recordInput)
             .then(result => {
-                this.createToastEvent('Success','Account Created Successfully','success');
+                this.createToastEvent('Success','Airline Created Successfully','success');
                 //this.template.querySelector("form.accountForm").reset();
                 //this.template.querySelector("lightning-combobox").value= undefined;
                 //Advanced feature in LWC
@@ -61,8 +58,7 @@ export default class CreateAccountRecord extends LightningElement {
     }
 
     handleCancel(){
-        this.refs.accForm.reset();
+        this.refs.airForm.reset();
         this.refs.combobox.value = undefined;
     }
-
 }
