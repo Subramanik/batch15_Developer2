@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-11-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Get any specific account (Grand Hotel) Record into LWC Page and make it as editable to the user and upon clicking on Save button, update the modified details on the record-->
+    <lightning-card title="LDS Wire - UpdateRecord Account" icon-name="standard:account_info">
+        <div class="slds-var-m-around_medium">
+            <!--Account Name-->
+            <lightning-input
+                type="text" 
+                label="Enter the Account Name"
+                name="Name"
+                value={name}
+                onchange={handleChange}>
+            </lightning-input>
+            <!--Account Industry-->
+            <lightning-combobox
+                name="Industry"
+                label="Select the Industry"
+                value={industry}
+                options={industryPicklistValues}
+                onchange={handleChange}>
+            </lightning-combobox>
+            <!--Account Website-->
+            <lightning-input 
+                type="url" 
+                name="Website"
+                label="Website URL"
+                value={website}
+                onchange={handleChange}>
+            </lightning-input>
+            <!--Account Revenue-->
+            <lightning-input 
+                type="number" 
+                name="AnnualRevenue"
+                label="Enter the Revenue"
+                value={annualRevenue}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <!--Update Button-->
+        <div class="slds-var-m-around_medium slds-align_absolute-center">
+            <lightning-button variant="brand" label="Update" onclick={updateHandler} class="slds-var-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

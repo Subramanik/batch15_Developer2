@@ -28,10 +28,17 @@ export default class CreateAccountRecord extends LightningElement {
         const name = event.target.name;
         this.accInputData[name] = value;
         console.log(JSON.stringify(this.accInputData));
-
     }
 
     handleSave(){
+        // Use Case: If the Annual Revenue is above 100k, Rating should be Hot, otherwise Cold. Only if the Account is created from LWC Page.
+        const rating = "Rating";
+        if(this.accInputData.AnnualRevenue > 100000){
+            this.accInputData[rating] = "Hot";
+        }else{
+            this.accInputData[rating] = "Cold";
+        }
+        console.log(JSON.stringify(this.accInputData));
         //prepare the parameter for createRecord method.
         const recordInput = {
             apiName : ACCOUNT_OBJECT.objectApiName,
