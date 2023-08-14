@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-14-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Get 5 opportunities from salesforce using an Apex Wired Method and display them in LWC Component Similar to List View records.-->
+    <lightning-card title="Wired Apex Without Parameter">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={opptyList}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={opptyList}
+                    columns={coumnName}>
+                </lightning-datatable>
+            </template>
+            <template lwc:if={error}>
+                <h1>There is an error : {error}</h1>
+            </template>
+        </div>
+    </lightning-card>
+</template>

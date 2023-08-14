@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-14-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Collect Record ID from user as an input and delete the record and display the success/error message-->
+    <lightning-card title="Wire adapter - Delete Record" icon-name="standard:record_delete">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                type="text" 
+                label="Enter ID of the record you want to delete"
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium slds-align_absolute-center">
+            <lightning-button 
+                variant="destructive" 
+                label="Delete Record" 
+                onclick={handleClick}
+                icon-name="utility:delete">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
