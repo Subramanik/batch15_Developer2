@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Learn Query Selector and Query SelectorAll. Upon clicking on the button apply styling to the HTML Element from JS-->
+    <lightning-card title="Query Selector" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <h1>This is a header tag!</h1>
+            <h1> This is a second header tag! </h1>
+            <p> This is a paragraph tag!</p>
+            <div> This is a div tag</div>
+            <template for:each={favoriteFruit} for:item="fruit">
+                <div key={fruit} class="fruit">
+                    {fruit}
+                </div>
+            </template>  
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-button
+                label="Apply Styling"
+                variant="brand"
+                onclick={handleClick}>
+            </lightning-button>
+        </div>
+    </lightning-card>   
+</template>

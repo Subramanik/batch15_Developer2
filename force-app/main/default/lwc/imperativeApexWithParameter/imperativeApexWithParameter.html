@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-15-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Build an UI that should display the opportunity stage picklist values, upon selecting the stage, bring all the opportunities matching the selected stage and display them in a row of records like a standard list view.-->
+    <lightning-card title="Imperative Apex - With Parameter" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select the Opportunity Stage"
+                options={opptyStageOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={opptyData}
+                columns={columns}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

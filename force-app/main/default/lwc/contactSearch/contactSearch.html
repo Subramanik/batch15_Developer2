@@ -1,0 +1,35 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-17-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Build a LWC to search the contact records in the salesforce system based on Contact Name and display them in a custom styling box-->
+    <lightning-card title="Imperative Apex - With Parameter" icon-name="utility:people">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="Search the Contacts using Name"
+                type="search"
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={contacts}>
+                <template for:each={contacts} for:item="contact">
+                    <div key={contact.Id} class="slds-box slds-box_small custom-box slds-var-m-around_medium">
+                        {contact.Name} <br/>
+                        {contact.Email} <br/>
+                        {contact.Phone} <br/>
+                        {contact.Title} <br/>
+                    </div>
+                </template>
+            </template>
+
+            <template lwc:if={error}>
+                <p> There is an error : {error} </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

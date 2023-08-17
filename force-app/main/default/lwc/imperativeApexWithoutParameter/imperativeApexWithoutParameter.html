@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-15-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Create a button, upon clicking on that button bring 5 Recently created Lead Records from database and display them in a box-->
+    <lightning-card title="Imperative Apex - Without Parameter" icon-name="standard:lead">
+        <div class="slds-var-m-around_medium">
+            <lightning-button 
+                variant="success" 
+                label="Get 5 Recently Created Leads" 
+                onclick={handleClick}
+                icon-name="standard:record_create">
+            </lightning-button>
+        </div>
+        <template lwc:if={leads}>
+            <template for:each={leads} for:item="lead">
+                <div key={lead.Id} class="slds-box slds-box_small slds-var-m-around_medium">
+                    {lead.FirstName} <br/>
+                    {lead.LastName} <br/>
+                    {lead.Company} <br/>
+                    {lead.Email} <br/>
+                    {lead.Title} <br/>
+                </div>
+            </template>
+        </template>
+        <template lwc:if={error}>
+            <h1>There is an error while fetching the data using Imperative Apex : {error} </h1>
+        </template>
+    </lightning-card>
+</template>
