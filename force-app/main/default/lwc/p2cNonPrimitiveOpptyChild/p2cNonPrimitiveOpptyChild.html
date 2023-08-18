@@ -1,0 +1,14 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-18-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <template for:each={opportunities} for:item="oppty" for:index="index">
+        <div key={oppty.Id}>
+            <strong> {index}. </strong> {oppty.Name} - {oppty.StageName} - {oppty.Amount}
+        </div>
+    </template>
+</template>

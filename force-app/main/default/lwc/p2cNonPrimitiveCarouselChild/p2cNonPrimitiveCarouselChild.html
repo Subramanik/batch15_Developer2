@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-18-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-carousel>
+        <template for:each={carouselList} for:item="carousel">
+            <lightning-carousel-image
+                    key={carousel.header}
+                    src ={carousel.src}
+                    header ={carousel.header}
+                    description ={carousel.description}
+                    alternative-text ={carousel.alternativeText}
+                    href ={carousel.href}>
+            </lightning-carousel-image>
+        </template>
+    </lightning-carousel>
+</template>

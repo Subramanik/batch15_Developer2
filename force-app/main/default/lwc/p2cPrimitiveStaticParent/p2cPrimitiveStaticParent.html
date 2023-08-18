@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-18-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use case: Pass Primitive data from parent to child and display them on your child component-->
+    <lightning-card title="P2C - Primitive Static" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <div>This is the parent component that passes data to the child compoenent </div>
+        </div>
+        <c-p2c-primitive-static-child 
+            student-name={name}
+            student-age={age}
+            is-student-passed={isPassed}>
+        </c-p2c-primitive-static-child>
+    </lightning-card>
+</template>

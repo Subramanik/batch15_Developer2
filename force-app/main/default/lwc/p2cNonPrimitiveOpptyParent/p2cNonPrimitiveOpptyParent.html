@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-18-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Send List of Opportunity details from parent to child and then display them on the child component-->
+    <lightning-card title="P2C - Non-Primitive Opportunities" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <c-p2c-non-primitive-oppty-child
+                opportunities={oppList}>
+            </c-p2c-non-primitive-oppty-child>
+        </div>
+    </lightning-card>
+</template>

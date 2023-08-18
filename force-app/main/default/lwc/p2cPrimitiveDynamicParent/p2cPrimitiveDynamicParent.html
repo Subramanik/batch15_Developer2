@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-18-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Create the input form and collect student information from the end user and send those details to the child component to display them on the UI-->
+    <lightning-card title="P2C - Primitive Dynamic" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                type="text" 
+                label="Enter the Student Name:"
+                onchange={handleChange}>
+            </lightning-input>
+            <lightning-input 
+                type="number" 
+                label="Enter the Student Age:"
+                onchange={handleChange}>
+            </lightning-input>
+            <lightning-input 
+                type="checkbox"
+                label="Is Student Passed the Exam ?"
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <c-p2c-primitive-static-child
+            student-name={name}
+            student-age={age}
+            is-student-passed={isPassed}>
+        </c-p2c-primitive-static-child>
+    </lightning-card>
+</template>
