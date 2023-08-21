@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-21-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Search the Lead Record on parent component and pass the lead data and columns to the reusable child component and display the result in the form of datatable/ display the error if any-->
+    <lightning-card title="P2C - Search Lead Record (Action at Parent)" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="Search Lead Record by Name here!!!"
+                type="search"
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <c-p2c-action-at-parent-search-oppty-child
+                result-data={leadList} 
+                error={error}
+                columns={leadColumns}>
+            </c-p2c-action-at-parent-search-oppty-child>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-21-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Enter your age at your parent component, upon enter the age send them to Child component and calculate the number of day and number of months, then display the information on the child component -->
+    <lightning-card title="P2C - Action at Parent - Magic Age" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                type="number" 
+                label="Enter your age and see the magic!!!" 
+                placeholder="type here..."
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <c-p2c-action-at-parent-child
+                age={yourAge}>
+            </c-p2c-action-at-parent-child>
+        </div>
+    </lightning-card>
+</template>

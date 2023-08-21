@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-21-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Select the opportunity stage on the parent component and fetch the relevant opportunities from database, then send those data and columns to child compoenent, child component should display the opportunity information in the form of datatable.-->
+    <lightning-card title="P2C - Search Oppty (Action at Parent)" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label="Select the Opportunity Stage"
+                options={StageOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+        <div class="slds-var-m-around_medium">
+            <c-p2c-action-at-parent-search-oppty-child
+                result-data={oppData}
+                columns={oppColumns}
+                error={error}>
+            </c-p2c-action-at-parent-search-oppty-child>
+        </div>
+    </lightning-card>
+</template>

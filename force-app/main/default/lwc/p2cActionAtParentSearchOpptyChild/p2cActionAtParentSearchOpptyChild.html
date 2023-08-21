@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-21-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <template lwc:if={resultData}>
+        <lightning-datatable
+                key-field="Id"
+                data={resultData}
+                columns={columns}>
+        </lightning-datatable>
+    </template>
+    <template lwc:if={error}>
+        There is  an error in fetching the data: {error}
+    </template>
+</template>
