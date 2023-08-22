@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-22-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!-- Build the LWC to display the input fields to collect progress bar value and size, upon entering the values, set the progress bar at your child component.
+    Create a button on the parent component and reset the progress bar value to 50 and size as medium-->
+
+    <!--concepts: P2C communication, passing primitive data from P2C, progress bar, input component, button, calling child method from parent.-->
+
+    <lightning-card title="P2C - Progress Bar" icon-name="custom:custom8">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="Enter the Progress Bar Value"
+                type="number"
+                onchange={handleChange}>
+            </lightning-input>
+            <lightning-combobox
+                label="Select the Progress Bar Size"
+                options={barOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <div class="slds-var-m-top_medium">
+                <lightning-button 
+                label="Reset Progress Bar"
+                onclick={handleReset}
+                variant="brand">
+                </lightning-button>
+            </div>
+
+            <div class="slds-var-m-top_medium">
+                <c-p2c-progress-bar-child
+                    progress-value={selectedValue}
+                    progress-size={selectedSize}>
+                </c-p2c-progress-bar-child>
+            </div> 
+        </div>
+    </lightning-card>
+</template>
