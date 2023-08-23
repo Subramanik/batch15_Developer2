@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-23-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="C2P - Custom Event with Data" icon-name="custom:custom63">
+        <div class="slds-var-m-around_medium">
+            <strong>Below are the information received from Child using a custom event: </strong> <br/>
+            Your Name: {name} <br/>
+            Your Age: {age} <br/>
+        </div>
+        <c-c2p-custom-event-with-data-child
+            onyourinfo={handleYourInfo}>
+        </c-c2p-custom-event-with-data-child>
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-23-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Child component should have two buttons, one for addition and another for subtraction. Upon user is clicking either of this button, the counter at parent should get adjusted accordingy. Initially the counter will have the value as 0-->
+    <lightning-card title="Child Component" icon-name="utility:activity">
+        <div class="slds-var-m-around_medium slds-text-align_center">
+            <lightning-button
+                label="Subtract"
+                onclick={handleSubtract}
+                icon-name="utility:dash"
+                variant="destructive"
+                class="slds-var-m-right_x-large">
+            </lightning-button>
+            <lightning-button
+                label="Add"
+                onclick={handleAdd}
+                icon-name="utility:add"
+                variant="brand"
+                icon-position="right">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

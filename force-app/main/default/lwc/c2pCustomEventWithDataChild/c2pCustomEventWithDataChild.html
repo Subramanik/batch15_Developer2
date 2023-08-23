@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-23-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Prepare the two input fields on the child component to receive your name and age, upon entering the information, pass them to parent component and display them on the UI-->
+    <lightning-card title="Child Component">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                label="Enter your Name: "
+                type="text"
+                name="name"
+                onchange={handleChange}>
+            </lightning-input>
+            <lightning-input
+                label="Enter your Age: "
+                type="number"
+                name="age"
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+    </lightning-card>
+</template>

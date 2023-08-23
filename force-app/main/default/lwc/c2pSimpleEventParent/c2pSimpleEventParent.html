@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-23-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="C2P - Simple Event" icon-name="utility:animal_and_nature">
+        <div class="slds-var-m-around_medium">
+            Couter Value : {counter}
+        </div>
+        <c-c2p-simple-event-child
+            onsubtract={handleSubtract}
+            onadd={handleAdd}
+        ></c-c2p-simple-event-child>
+    </lightning-card>
+</template>

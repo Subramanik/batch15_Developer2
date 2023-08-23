@@ -23,8 +23,8 @@ export default class P2cProgressBarParent extends LightningElement {
     }
 
     handleReset(){
-        //this.selectedValue = 50;
-        //this.selectedSize = 'medium';
+        this.selectedValue = 50;
+        this.selectedSize = 'medium';
         let childCmp= this.template.querySelector('c-p2c-progress-bar-child');
         childCmp.childResetMethod();
     }

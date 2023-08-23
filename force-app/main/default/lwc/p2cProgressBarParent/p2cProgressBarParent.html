@@ -2,7 +2,7 @@
   @description       : 
   @author            : Subramani Kumarasamy
   @group             : 
-  @last modified on  : 08-22-2023
+  @last modified on  : 08-23-2023
   @last modified by  : Subramani Kumarasamy
 -->
 <template>
@@ -16,10 +16,12 @@
             <lightning-input
                 label="Enter the Progress Bar Value"
                 type="number"
+                value={selectedValue}
                 onchange={handleChange}>
             </lightning-input>
             <lightning-combobox
                 label="Select the Progress Bar Size"
+                value={selectedSize}
                 options={barOptions}
                 onchange={handleChange}>
             </lightning-combobox>
