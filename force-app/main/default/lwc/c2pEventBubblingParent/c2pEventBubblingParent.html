@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-24-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <div onmycustomevent={handleChildEventAtDiv2}>
+        This is the parent component!
+        <div onmycustomevent={handleChildEventAtDiv1}>
+            <c-c2p-event-bubbling-child
+                onmycustomevent={handleChildEvent}>  
+            </c-c2p-event-bubbling-child>
+        </div>
+    </div>
+</template>

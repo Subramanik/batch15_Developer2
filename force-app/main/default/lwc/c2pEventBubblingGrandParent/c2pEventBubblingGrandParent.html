@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-24-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="C2P - Event Bubbling" icon-name="standard:events">
+        <div onmycustomevent={handleChildEventDiv1} class="slds-var-m-around_medium">
+            This is the grand parent component!
+            <c-c2p-event-bubbling-parent
+                onmycustomevent={handleChildEvent}>
+            </c-c2p-event-bubbling-parent>
+        </div>
+    </lightning-card>
+</template>
