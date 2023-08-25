@@ -1,0 +1,27 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-25-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <!--Use Case: Build Sign-In and Sign-up page.-->
+    <lightning-card title="Render Method">
+        <div class="slds-var-m-around_medium">
+            Are you a first time visitor ? --> Use Signup below <br/>
+            Are you a returning visitor ? --> Use Signin below <br/>
+            <lightning-button
+                label="SignIn"
+                onclick={clickHandler}
+                variant="brand">
+            </lightning-button>
+            <lightning-button
+                class="slds-var-m-left_medium"
+                label="SignUp"
+                onclick={clickHandler}
+                variant="neutral">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

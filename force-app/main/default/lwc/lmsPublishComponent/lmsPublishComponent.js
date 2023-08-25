@@ -20,7 +20,7 @@ export default class LmsPublishComponent extends LightningElement {
             publishedMessage : this.messageToPublish
         };
 
-        publish(messageContext, LEARN_LMS, message);
+        publish(this.messageContext, LEARN_LMS, message);
     }
 
 }

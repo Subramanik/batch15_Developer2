@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : Subramani Kumarasamy
+  @group             : 
+  @last modified on  : 08-25-2023
+  @last modified by  : Subramani Kumarasamy
+-->
+<template>
+    <lightning-card title="LifeCycle Hooks" icon-name="standard:customer_lifecycle_analytics">
+        <div class="slds-var-m-around_medium">
+            This is the parent component!
+        </div>
+        <div class="slds-var-m-around_medium">
+            <lightning-button
+                label="Show/Hide Child Component"
+                variant="brand"
+                onclick={handleClick}>
+            </lightning-button>
+            <template lwc:if={showChild}>
+                <c-life-cycle-hooks-child></c-life-cycle-hooks-child>
+            </template>
+        </div>
+    </lightning-card>
+</template>

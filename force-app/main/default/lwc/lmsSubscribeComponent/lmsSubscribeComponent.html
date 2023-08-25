@@ -2,7 +2,7 @@
   @description       : 
   @author            : Subramani Kumarasamy
   @group             : 
-  @last modified on  : 08-24-2023
+  @last modified on  : 08-25-2023
   @last modified by  : Subramani Kumarasamy
 -->
 <template>
@@ -13,7 +13,14 @@
                 variant="brand"
                 onclick={handleClick}>
             </lightning-button>
-            <div class="slds-var-m-top_medium"> 
+            <lightning-button
+                class="slds-var-m-left_medium"
+                label="Un-Subscribe"
+                variant="destructive"
+                onclick={handleUnSubscribe}>
+            </lightning-button>
+            <div class="slds-var-m-top_medium">
+                Status : {SubStatus} <br/>
                 Received Message: {receivedMessage}
             </div>
         </div>
