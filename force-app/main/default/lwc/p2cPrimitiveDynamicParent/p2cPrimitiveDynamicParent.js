@@ -7,6 +7,7 @@ export default class P2cPrimitiveDynamicParent extends LightningElement {
     isPassed;
 
     handleChange(event){
+
         const type = event.target.type;
 
         if(type === 'text'){

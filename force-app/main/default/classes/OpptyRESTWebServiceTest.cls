@@ -1,4 +1,4 @@
-    /**
+/**
      * @description       : 
      * @author            : Subramani Kumarasamy
      * @group             : 
@@ -36,7 +36,7 @@
             Opportunity opp = [SELECT ID FROM Opportunity LIMIT 1];
             String baseURL = System.URL.getSalesforceBaseUrl().toExternalForm();
             req.requestURI = baseURL +'/services/apexrest/Oppty/'+opp.Id;
-            req.httpMethod = 'GET'; 
+            req.httpMethod = 'GET';
 
             // Assign the resuest to RestContext.request
             RestContext.request = req;

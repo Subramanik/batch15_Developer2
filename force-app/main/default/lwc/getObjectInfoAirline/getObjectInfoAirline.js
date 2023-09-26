@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
-import AIRLINE_OBJECT from '@salesforce/schema/Airline__C';
+import AIRLINE_OBJECT from '@salesforce/schema/Airline__c';
 
 export default class GetObjectInfoAirline extends LightningElement {
     isCreate;

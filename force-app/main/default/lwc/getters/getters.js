@@ -12,7 +12,6 @@ export default class Getters extends LightningElement {
 
     //Getter for the first item in the array
     get firstFood(){
-        
         return this.favoriteFoods[0];
     }
 

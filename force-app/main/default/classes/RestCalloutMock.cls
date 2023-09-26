@@ -35,10 +35,6 @@ public with sharing class RestCalloutMock implements HttpCalloutMock{
             HttpResponse response = new HttpResponse();
             response.setStatusCode(200);
             return response;
-        }else if(request.getEndpoint()== 'callout:Get_Airline' && request.getMethod()=='POST'){
-            HttpResponse response = new HttpResponse();
-            response.setStatusCode(200);
-            return response;
         }
         return null;
         

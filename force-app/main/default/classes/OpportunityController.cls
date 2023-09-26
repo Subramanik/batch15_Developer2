@@ -14,7 +14,8 @@ public with sharing class OpportunityController {
 
     @AuraEnabled
     public static List<Opportunity> getOpptyByStage(String selectedStage){
-        return [SELECT ID, Name, StageName, CloseDate, Amount FROM Opportunity WHERE StageName =: selectedStage];   
+        return [SELECT ID, Name, StageName, CloseDate, Amount FROM Opportunity WHERE StageName =: selectedStage];
+        
     }
     
 }

@@ -25,4 +25,3 @@ export default class RecordFormAirline extends LightningElement {
         this.dispatchEvent(event);
     }
 }
-

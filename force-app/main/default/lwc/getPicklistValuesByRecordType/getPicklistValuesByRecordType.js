@@ -11,6 +11,7 @@ export default class GetPicklistValuesByRecordType extends LightningElement {
 
     @wire(getObjectInfo, { objectApiName: ACCOUNT_OBJECT })
     accInfo;
+
     @wire(getPicklistValuesByRecordType, { objectApiName: ACCOUNT_OBJECT, recordTypeId: '$accInfo.data.defaultRecordTypeId' })
     picklistHandler({data,error}){
         if(data){
@@ -22,6 +23,7 @@ export default class GetPicklistValuesByRecordType extends LightningElement {
             console.error(error);
         }
     }
+
     handleChange(event){
         if(event.target.name === 'industry'){
             this.industryValue= event.target.value;
